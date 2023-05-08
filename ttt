@@ -1,0 +1,70 @@
+board=[]
+print(board)
+board.append(["-","-","-"])
+board.append(["-","-","-"])
+board.append(["-","-","-"])
+
+cs="x"
+#цикл вечный
+while True:
+    # ыводим board
+    #print(board[0][0],end="")
+    #print(board[0][1])
+    print(board[0])
+    print(board[1])
+    print(board[2])
+    #считываем кардинаты с консоли
+    x=int(input())
+    y=int(input())
+    if board [x][y] != "-":
+        break
+    board[x][y]=cs
+    # выйти из цикла когда x или 0 будет равен трем подряд
+    exit=False
+    for r in board:
+        if r == ["x", "x", "x"] or r == [0, 0, 0]:
+            exit=True
+            break
+    if exit == True:
+        break
+
+    exit=True
+    for i in range (3):
+        for j in range(3):
+            if board[i][j] != "x":
+                exit=False
+                break
+    if exit == True:
+        break
+    exit=True
+    for i in range (3):
+        for j in range(3):
+            if board[i][j] != 0:
+                exit=False
+                break
+    if exit == True:
+        break
+    exit=True
+    for i in range (3):
+
+            if board[i][i] != 0:
+                exit=False
+                break
+    if exit == True:
+        break
+    exit=True
+    for i in range (3):
+
+            if board[i][i] != 'x':
+                exit=False
+                break
+    if exit == True:
+        break
+
+
+
+    #обновляем cs
+    if cs == 0:
+        cs="x"
+    else:
+        cs=0
